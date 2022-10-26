@@ -9,6 +9,7 @@
 | 4 | 1일차 Baseline | 신재영 | Resnet-50 | - | - | epoch 30~100 어디쯤  | 0.5883 | 66.6349 |
 | 5 | 1일차 Baseline | 신재영 | Resnet-50 | - | - | epoch  100| 0.5972 | 66.3968 |
 | 6 | 1일차 Baseline | 신재영 | beit_large_patch16_512 | - | - | epoch  11| 0.5817 | 67.7302 |
+| 7 | Custom | 서원준 | VIT | centercrop | - | epoch 10 | 0.5925 | 68.7778 |
 
 
 
