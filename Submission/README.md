@@ -10,13 +10,13 @@
 | 5 | 1일차 Baseline | 신재영 | Resnet-50 | - | - | epoch  100| 0.5972 | 66.3968 |
 | 6 | 1일차 Baseline | 신재영 | beit_large_patch16_512 | - | - | epoch  11| 0.5817 | 67.7302 |
 | 7 | 1일차 Baseline | 이영섭 | Wide_ResNet101_2 | - | - | epoch 50 | 0.5895 | 70.4444 |
-| 8 | Custom | 서원준 | VIT | centercrop | - | epoch 10 | 0.5925 | 68.7778 |
+| 8 | Custom | 서원준 | vit-base-patch16-224-in21k | centercrop | - | epoch 10 | 0.5925 | 68.7778 |
 
 ## 🔥10/27 제출 상황
 |제출순서| 기준 | 작성자 | 모델 | 전처리 | 후처리 | 하이퍼 파라미터 | f1_score | Accuracy | 
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
 | 1 | 1일차 Baseline | 이영섭 | EfficientNet | - | - | epoch 50 | 0.3980 | 49.6508 |
-| 2 | Custom | 서원준 | VIT | centercrop | - | epoch 10 | 0.5925 | 68.7778 |
+| 2 | Custom | 서원준 | vit-base-patch16-224-in21k | centercrop | - | epoch 10 | 0.5925 | 68.7778 |
 
 
 
