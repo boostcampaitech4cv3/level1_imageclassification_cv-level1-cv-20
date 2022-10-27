@@ -17,6 +17,7 @@
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
 | 1 | 1일차 Baseline | 이영섭 | EfficientNet | - | - | epoch 50 | 0.3980 | 49.6508 |
 | 2 | Custom | 서원준 | vit-base-patch16-224-in21k | centercrop | - | epoch 10 | 0.5925 | 68.7778 |
+| 3 | 1일차 Baseline custom | 전지용 | vit-base-16 | - | - | epoch 100 | 0.4357 | 51.2698 |
 
 
 

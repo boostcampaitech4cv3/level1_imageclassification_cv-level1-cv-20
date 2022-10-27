@@ -11,4 +11,5 @@
 |     ResNet50 + ADAM  (PyTorch Pretrained)      |   0.786 (overfitting)    |    28m    | 신재영 | 10.26 |
 |       VGG16 + ADAM (PyTorch Pretrained)        |   0.17 (does not work)   |    0m     | 신재영 | 10.27 |
 |  MobileNetV3 Large + ADAM(PyTorch Pretrained)  |         0.748            |    3m     | 윤상준 | 10.27 |
+|      vit_b_16 + ADAM (PyTorch Pretrained)      |         0.772            |  4h 40m   | 전지용 | 10.27 |
 > 데이터 수가 작기 때문에 큰 모델을 사용하면 overfitting이 필연적으로 일어난다. Efficientnet이나 ResNet을 사용해보는게 나쁘지 않을듯 하다
