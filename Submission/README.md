@@ -21,6 +21,7 @@
 |    4     |   CustomBaselineV1    | 신재영 |           ResNet           |            |        |    epoch 10     |  0.578   | 64.4     |
 |    5     | 2일차 Baseline | 이영섭 | Wide_ResNet101_2 |    -    |    -    |   epoch 50   |  0.5734   |  68.0000  |
 |    6     | 2일차 Baseline | 이영섭 | Wide_ResNet101_2 |  centercrop  |    -    |   epoch 50   |  0.4462   |  52.3175  |
+|    7     |        Custom         | 서원준 | vit(따로 classification) | centercrop |   -    |    epoch 10     |  0.5541  | 66.9206  |
 
 
 
