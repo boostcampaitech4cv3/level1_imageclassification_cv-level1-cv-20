@@ -1,7 +1,7 @@
 class HyperParameter():
     EPOCH = 100
     BATCH_SIZE = 32
-    RESIZE = (96,128)
+    RESIZE = (128,96)
     LOG_INTERVAL =20
     TRAIN_IMAGE_DIR = '/opt/ml/input/data/train/images'
     TRAIN_CSV_DIR = '/opt/ml/input/data/train/train.csv'

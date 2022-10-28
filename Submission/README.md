@@ -31,6 +31,7 @@
 |    2     | 2일차 Baseline custom | 전지용 | ResneXt  | Centercrop+Filp(H)+Brightness+GaussNoise |   -    |    epoch 50     |  0.6958  | 77.4762  |
 |          |                       |        |          |                                          |        |                 |          |          |
 |    4     |        Custom         | 신재영 | ResNet50 |               Adam + Focal               |        |                 |   0.60   | 0.695    |
+|    5     |        Custom         | 신재영 | ResNet18 | Adam + Focal + NoResize + Augmentations  |        |                 |  0.674   | 0.754    |
 |          |                       |        |          |                                          |        |                 |          |          |
 
 
