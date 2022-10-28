@@ -25,17 +25,17 @@
 
 ### 사람별로 나눈 결과(더 test_set에 가까울 것으로 예상됨)
 
-|                 모델명                 |    최고 F1 Score    | 최고 Val Acc | 걸린 시간(F1 Score) |  사람  | 날짜  |            run name            |
-| :------------------------------------: | :-----------------: | :----------: | :-----------------: | :----: | :---: | :----------------------------: |
-|        ResNet50 + ADAM + F1Loss        |        0.645        |    0.788     |         52m         | 신재영 | 10.27 |              run               |
-|        ResNet18 + ADAM + F1Loss        |        0.695        |    0.832     |         17m         | 신재영 | 10.27 |    run_resnet18_adam_f1loss    |
-|     ResNet18 + ADAM + CrossEntropy     | 0.740 (overfitting) |    0.849     |         3m          | 신재영 | 10.27 | run_resnet18_adam_crossentropy |
-|        ResNet50 + ADAM + Focal         |        0.728        |    0.863     |        1h 6m        | 신재영 | 10.27 |    run_resnet50_adam_focal     |
-|        ResNet18 + ADAM + Focal         |        0.735        |     0.86     |         11m         | 신재영 | 10.27 |    run_resnet18_adam_focal     |
-|         ResNext + ADAM + Focal         |        0.788        |    0.884     |         54m         | 신재영 | 10.28 |       resnext_adam_focal       |
-|     Deit3Base16_224 + ADAM + Focal     |        0.635        |    0.753     |        1h 17        | 신재영 | 10.28 |      dei3base_adam_focal       |
-| ResNet18 + ADAM + Focal+ Augmentations |        0.803        |    0.914     |         45m         | 신재영 | 10.28 |       resnet18_more_aug        |
-|                                        |                     |              |                     |        |       |                                |
+|                       모델명                       |    최고 F1 Score    | 최고 Val Acc | 걸린 시간(F1 Score) |  사람  | 날짜  |            run name            |
+| :------------------------------------------------: | :-----------------: | :----------: | :-----------------: | :----: | :---: | :----------------------------: |
+|              ResNet50 + ADAM + F1Loss              |        0.645        |    0.788     |         52m         | 신재영 | 10.27 |              run               |
+|              ResNet18 + ADAM + F1Loss              |        0.695        |    0.832     |         17m         | 신재영 | 10.27 |    run_resnet18_adam_f1loss    |
+|           ResNet18 + ADAM + CrossEntropy           | 0.740 (overfitting) |    0.849     |         3m          | 신재영 | 10.27 | run_resnet18_adam_crossentropy |
+|              ResNet50 + ADAM + Focal               |        0.728        |    0.863     |        1h 6m        | 신재영 | 10.27 |    run_resnet50_adam_focal     |
+|              ResNet18 + ADAM + Focal               |        0.735        |     0.86     |         11m         | 신재영 | 10.27 |    run_resnet18_adam_focal     |
+|               ResNext + ADAM + Focal               |        0.788        |    0.884     |         54m         | 신재영 | 10.28 |       resnext_adam_focal       |
+|           Deit3Base16_224 + ADAM + Focal           |        0.635        |    0.753     |        1h 17        | 신재영 | 10.28 |      dei3base_adam_focal       |
+|       ResNet18 + ADAM + Focal+ Augmentations       |        0.803        |    0.914     |         45m         | 신재영 | 10.28 |       resnet18_more_aug        |
+| ResNet18 + ADAM + Focal+ Augmentations_with_resize |                     |              |                     |        |       |                                |
 
 
 > 최고 결과 이후에 overfitting이 일어나면 overfitting이라고 써준다
