@@ -29,8 +29,8 @@
 |    ResNet50 + ADAM + F1Loss    |        0.645        |    0.788     |         52m         | 신재영 | 10.27 |              run               |
 |    ResNet18 + ADAM + F1Loss    |        0.695        |    0.832     |         17m         | 신재영 | 10.27 |    run_resnet18_adam_f1loss    |
 | ResNet18 + ADAM + CrossEntropy | 0.740 (overfitting) |    0.849     |         3m          | 신재영 | 10.27 | run_resnet18_adam_crossentropy |
-|    ResNet50 + ADAM + Focal     |                     |              |                     | 신재영 | 10.27 |    run_resnet50_adam_focal     |
-|    ResNet18 + ADAM + Focal     |                     |              |                     | 신재영 | 10.27 |    run_resnet18_adam_focal     |
+|    ResNet50 + ADAM + Focal     |        0.728        |    0.863     |        1h 6m        | 신재영 | 10.27 |    run_resnet50_adam_focal     |
+|    ResNet18 + ADAM + Focal     |        0.735        |     0.86     |         11m         | 신재영 | 10.27 |    run_resnet18_adam_focal     |
 |                                |                     |              |                     |        |       |                                |
 
 
