@@ -32,6 +32,8 @@
 | ResNet18 + ADAM + CrossEntropy | 0.740 (overfitting) |    0.849     |         3m          | 신재영 | 10.27 | run_resnet18_adam_crossentropy |
 |    ResNet50 + ADAM + Focal     |        0.728        |    0.863     |        1h 6m        | 신재영 | 10.27 |    run_resnet50_adam_focal     |
 |    ResNet18 + ADAM + Focal     |        0.735        |     0.86     |         11m         | 신재영 | 10.27 |    run_resnet18_adam_focal     |
+|     ResNext + ADAM + Focal     |        0.788        |    0.884     |         54m         | 신재영 | 10.28 |       resnext_adam_focal       |
+| Deit3Base16_224 + ADAM + Focal |                     |              |                     | 신재영 | 10.29 |      dei3base_adam_focal       |
 |                                |                     |              |                     |        |       |                                |
 
 
