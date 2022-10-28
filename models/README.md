@@ -35,7 +35,8 @@
 |               ResNext + ADAM + Focal               |        0.788        |    0.884     |         54m         | 신재영 | 10.28 |       resnext_adam_focal       |
 |           Deit3Base16_224 + ADAM + Focal           |        0.635        |    0.753     |        1h 17        | 신재영 | 10.28 |      dei3base_adam_focal       |
 |       ResNet18 + ADAM + Focal+ Augmentations       |        0.803        |    0.914     |         45m         | 신재영 | 10.28 |       resnet18_more_aug        |
-| ResNet18 + ADAM + Focal+ Augmentations_with_resize |                     |              |                     |        |       |                                |
+| ResNet18 + ADAM + Focal+ Augmentations_with_resize |        0.74         |    0.867     |         12m         | 신재영 | 10.28 |   resnet18_more_aug_resized    |
+| ResNet18 + Adam + Focal + Augmentation + face data |        0.792        |     0.91     |       1h 11m        | 신재영 | 10.28 |           tqdm_test            |
 
 
 > 최고 결과 이후에 overfitting이 일어나면 overfitting이라고 써준다
