@@ -42,3 +42,5 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 
 ## 📌 참고 자료
 * [Moving Window Regression: A Novel Approach to Ordinal Regression](https://github.com/nhshin-mcl/mwr)
+  [Aggregated Residual Transformations for Deep Neural Networks](https://arxiv.org/abs/1611.05431)
+  [How can i process multi loss in pytorch?](https://stackoverflow.com/questions/53994625/how-can-i-process-multi-loss-in-pytorch)
