@@ -165,7 +165,7 @@ for epoch in range(HyperParameter.EPOCH):
             
             train_acc_mask = matches_mask / HyperParameter.BATCH_SIZE / HyperParameter.LOG_INTERVAL
             train_acc_age = matches_age / HyperParameter.BATCH_SIZE / HyperParameter.LOG_INTERVAL
-            train_acc_gender = matches_age / HyperParameter.BATCH_SIZE / HyperParameter.LOG_INTERVAL
+            train_acc_gender = matches_gender / HyperParameter.BATCH_SIZE / HyperParameter.LOG_INTERVAL
             
             train_f1_mask=f1_score(label_list_mask,pred_list_mask,average="macro")
             train_f1_age=f1_score(label_list_age,pred_list_age,average="macro")
