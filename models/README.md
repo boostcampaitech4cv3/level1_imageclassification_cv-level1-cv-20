@@ -19,6 +19,7 @@
 |         Wide_ResNet101_2 + ADAM + Focal          |   0.762 (overfitting)    |    1h     | 이영섭 | 10.27 |
 | Wide_ResNet101_2 + ADAM + CrossEntropy + aug(Cr) |          0.728           |    1h     | 이영섭 | 10.27 |
 |  ResNeXt50 + ADAM + Focal + aug(Cr, Flip, GN, B) |          0.92            |  1h 30m   | 전지용 | 10.28 |
+| Wide_ResNet101_2 + ADAM + Focal + aug(Cr, B, GN, Flip) + CosineAnnealingLR | 0.7652 | 3h | 이영섭| 10.29 |
 > 데이터 수가 작기 때문에 큰 모델을 사용하면 overfitting이 필연적으로 일어난다. Efficientnet이나 ResNet을 사용해보는게 나쁘지 않을듯 하다
 
 # BaselineV2

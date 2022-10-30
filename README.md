@@ -13,7 +13,16 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 - Mask : Wear, Incorrect, Not Wear (세 가지 카테고리)
 - Gender: Male, Female (두 가지 카테고리)
 - Age : <30, >=30 and <60, >=60(세 가지 카테고리)
-![image](https://user-images.githubusercontent.com/79644050/197935770-883e5583-671d-464b-bdbb-921b62df083a.png)
+<img src="https://user-images.githubusercontent.com/79644050/197935770-883e5583-671d-464b-bdbb-921b62df083a.png" width ="60%" height="80%"/>
+
+## 📌 폴더 세부사항
+|  폴더 명  | 폴더 내용 | 링크 |
+| :------: | :----: | :--- |
+| EDA           | 팀원별 탐색적 데이터 분석 및 요약                               | [링크](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/tree/main/EDA)|
+| Preproessing  | 학습 과정에서의 전처리 적용 코드                                | [링크](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/tree/main/Preprocessing)|
+| Submission    | 각 일자별 리더보드 제출 관련 기록                               | [링크](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/tree/main/Submission)|
+| Baseline      | 리더보드 용 Baseline + 새로운 모델 작성 시 필요한 base code     | [링크](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/tree/main/baseline)|
+| Models        | 개인별 시도한 코드 기록                                        | [링크](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/tree/main/models)|
 
 ## 📌 모델별 성능
 |   기준   | 작성자 | 모델 | 전처리 | 후처리 | 하이퍼 파라미터 | 성능 |
@@ -42,5 +51,6 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 
 ## 📌 참고 자료
 * [Moving Window Regression: A Novel Approach to Ordinal Regression](https://github.com/nhshin-mcl/mwr)
-  [Aggregated Residual Transformations for Deep Neural Networks](https://arxiv.org/abs/1611.05431)
-  [How can i process multi loss in pytorch?](https://stackoverflow.com/questions/53994625/how-can-i-process-multi-loss-in-pytorch)
+* [Aggregated Residual Transformations for Deep Neural Networks](https://arxiv.org/abs/1611.05431)
+* [How can i process multi loss in pytorch?](https://stackoverflow.com/questions/53994625/how-can-i-process-multi-loss-in-pytorch)
+* [Age And Gender Classification](https://paperswithcode.com/task/age-and-gender-classification)
