@@ -44,7 +44,7 @@
 
 # AgeOnlyTraining
 
-|                       모델명                       | 최고 F1 Score | 최고 Val Acc | 걸린 시간(F1 Score) | 사람 | 날짜  |                run name                 |
-| :------------------------------------------------: | :-----------: | :----------: | :-----------------: | :--: | :---: | :-------------------------------------: |
-| ResNet18+ADAM+Focal+Augmentation+NoResize+FaceData |               |              |                     |      | 10.28 | age_resnet18_focal_aug_noresize_faceaug |
-|                                                    |               |              |                     |      |       |                                         |
+|                       모델명                       | 최고 F1 Score | 최고 Val Acc | 걸린 시간(F1 Score) |  사람  | 날짜  | run name  |
+| :------------------------------------------------: | :-----------: | :----------: | :-----------------: | :----: | :---: | :-------: |
+| ResNet18+ADAM+Focal+Augmentation+NoResize+FaceData |     0.824     |    0.928     |       1h 47m        | 신재영 | 10.28 | tqdm_test |
+|                                                    |               |              |                     |        |       |           |
