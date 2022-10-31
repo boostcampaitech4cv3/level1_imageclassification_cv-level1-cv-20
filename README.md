@@ -39,7 +39,7 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 ## 📌 개인별 대회 활동내역
 | 이영섭 | 윤상준 | 서원준 | 전지용 | 신재영 |
 | :----: | :----: | :----: | :----: | :-----:|
-|        |        |        |        |        |
+|        | [개인 회고](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/blob/main/Retrospect/%EC%9C%A4%EC%83%81%EC%A4%80.md)|        |        |        |
 
 ## 📌 주의 사항
 * 매일 활동한 내역 정리해서 github에 올리기 ✨
