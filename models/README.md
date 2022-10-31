@@ -18,8 +18,8 @@
 |  vit_b_16 + ADAM + aug(Cr, Flip, GN, B) + Focal  |          0.714           |    2h     | 전지용 | 10.27 |
 |         Wide_ResNet101_2 + ADAM + Focal          |   0.762 (overfitting)    |    1h     | 이영섭 | 10.27 |
 | Wide_ResNet101_2 + ADAM + CrossEntropy + aug(Cr) |          0.728           |    1h     | 이영섭 | 10.27 |
-|  ResNeXt50 + ADAM + Focal + aug(Cr, Flip, GN, B) |          0.92            |  1h 30m   | 전지용 | 10.28 |
 | Wide_ResNet101_2 + ADAM + Focal + aug(Cr, B, GN, Flip) + CosineAnnealingLR | 0.7652 | 3h | 이영섭| 10.29 |
+
 > 데이터 수가 작기 때문에 큰 모델을 사용하면 overfitting이 필연적으로 일어난다. Efficientnet이나 ResNet을 사용해보는게 나쁘지 않을듯 하다
 
 # BaselineV2
@@ -38,6 +38,15 @@
 |       ResNet18 + ADAM + Focal+ Augmentations       |        0.803        |    0.914     |         45m         | 신재영 | 10.28 |       resnet18_more_aug        |
 | ResNet18 + ADAM + Focal+ Augmentations_with_resize |        0.74         |    0.867     |         12m         | 신재영 | 10.28 |   resnet18_more_aug_resized    |
 | ResNet18 + Adam + Focal + Augmentation + face data |        0.792        |     0.91     |       1h 11m        | 신재영 | 10.28 |           tqdm_test            |
+|  ResNeXt50 + ADAM + Focal + aug(Cr, Flip, GN, B)   |          -          |   0.92       |  1h 30m   | 전지용 | 10.28 |  Resnext50  |
+|  ResNeXt50 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + Face data |          -          |    0.90     |  1h 30m   | 전지용 | 10.28 |  Resnext50  |
+|  ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B)  |        0.856        |    0.92     |  2h 30m   | 전지용 | 10.29 |  Resnext101  |
+|  ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + face data |        0.834        |    0.912     |  2h 30m   | 전지용 | 10.29 |  Resnext101  |
+|  ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + face data |        0.838        |    0.92     |  2h 30m   | 전지용 | 10.29 |  Resnext101  |
+|  ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.841        |    0.915     |  5h    | 전지용 | 10.29 |  Resnext101 + batchsize(16)  |
+|  ResNeXt50 + Multihead + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.8559        |    0.92     |   5h    | 전지용 | 10.30 |  Resnextmultihead + epoch(70)  |
+|  ResNeXt50 + Multihead + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + face data |        0.83        |    0.92     |   5h    | 전지용 | 10.30 |  Resnextmultihead + epoch(70)  |
+|  ResNeXt50 + Multihead + agelayer + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.8555        |    0.921     |   5h    | 전지용 | 10.30 |  Resnextmultiagehead + epoch(70)  |
 |                                                    |                     |              |                     |        |       |                                |
 
 

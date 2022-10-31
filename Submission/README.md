@@ -33,7 +33,23 @@
 |    4     |        Custom         | 신재영 | ResNet50 |                   Adam + Focal                    |        |                 |   0.60   | 0.695    |
 |    5     |        Custom         | 신재영 | ResNet18 |      Adam + Focal + NoResize + Augmentations      |        |                 |  0.674   | 0.754    |
 |          |        Custom         | 신재영 | ResNet18 | Adam + Focal + NoResize + Augmentations+Face data |        |                 |  0.692   | 0.774    |
+|    6     |  Baseline custom v3   | 전지용 | ResneXt101  |     Centercrop+Filp(H)+Br+GN          |   -    |    epoch 50     |  0.7064  | 77.1587  |
 
+## 🔥10/29 제출 상황
+| 제출순서 |         기준          | 작성자 |   모델   |                      전처리                       | 후처리 | 하이퍼 파라미터 | f1_score | Accuracy |
+| :------: | :-------------------: | :----: | :------: | :-----------------------------------------------: | :----: | :-------------: | :------: | :------- |
+|    1     |  Baseline custom v3   | 전지용 | ResneXt101  |     Centercrop+Filp(H)+Br+GN+facedata       |   -    |    epoch 50 + cosLR     |  0.6719  | 75.0476  |
+|          |                       |        |          |                                                   |        |                 |          |          |
+|          |                       |        |          |                                                   |        |                 |          |          |
+|          |                       |        |          |                                                   |        |                 |          |          |
+|    5     |  Baseline custom v4   | 전지용 | ResneXt101 + multihead  |     Centercrop+Filp(H)+Br+GN+facedata       |   -    |    epoch 50 + cosLR     |  0.6757  | 76.4762  |
+
+## 🔥10/30 제출 상황
+| 제출순서 |         기준          | 작성자 |   모델   |                      전처리                       | 후처리 | 하이퍼 파라미터 | f1_score | Accuracy |
+| :------: | :-------------------: | :----: | :------: | :-----------------------------------------------: | :----: | :-------------: | :------: | :------- |
+|    1     |  Baseline custom v4   | 전지용 | ResneXt50 + multihead  |     Centercrop+Filp(H)+Br+GN       |   -    |    epoch 50 + cosLR     |  0.7007  | 77.0635  |
+|          |                       |        |          |                                                   |        |                 |          |          |
+|    8     |  Baseline custom v4   | 전지용 | ResneXt50 + multihead + ageLayer  |     Centercrop+Filp(H)+Br+GN       |   -    |    epoch 70 + cosLR     |  0.7126  | 77.3492  |
 
 ## 📌 주의 사항
 * 제출은 팀당 10회 제한이니 팀원에게 알리고 제출하기✨
