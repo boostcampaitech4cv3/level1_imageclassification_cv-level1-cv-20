@@ -1,29 +1,29 @@
 import multiprocessing
 import os
 
+import albumentations as A
 import pandas as pd
 import torch
 import torch.nn as nn
 import torchvision
+from albumentations.pytorch import ToTensorV2
 from dataset import *
 from hyperparameter import HyperParameter
 from torch.utils.data import DataLoader
-from torchvision import transforms
+
+from model import Deit3Base224, ResNet18, ResnextModel
 
 use_cuda = torch.cuda.is_available()
 device = torch.device("cuda" if use_cuda else "cpu")
-model=torchvision.models.resnet50(pretrained=True)
-model.fc=nn.Linear(model.fc.in_features,HyperParameter.NUM_CLASS)
-model.to(device)
+model=ResNet18(HyperParameter.NUM_CLASS).cuda()
 
 model.load_state_dict(torch.load(os.path.join(HyperParameter.SAVE_DIR,"best_model.pth"),map_location=device))
 model.eval()
 
-transform=transforms.Compose([
-    transforms.Resize(HyperParameter.RESIZE),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225])
+transform=A.Compose([
+    # A.Resize(*HyperParameter.RESIZE),
+    A.Normalize(),
+    ToTensorV2(),
 ])
 
 test_df=pd.read_csv(HyperParameter.TEST_CSV_DIR)

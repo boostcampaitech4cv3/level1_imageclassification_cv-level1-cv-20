@@ -1,17 +1,25 @@
 import multiprocessing
 import random
 
+import albumentations as A
 import numpy as np
+import timm
 import torch
 import torch.nn as nn
 import torchvision
+from albumentations.pytorch import ToTensorV2
 from dataset import *
 from hyperparameter import HyperParameter
 from loss import *
 from sklearn.metrics import f1_score
+from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
-from torchvision import transforms
+from tqdm import tqdm
+from torchsampler import ImbalancedDatasetSampler
+
+from model import (ConvnextModel, Deit3Base224,EfficientNetB0, EfficientNetB4, ResNet18,
+                   ResnextModel,SwinTransformer)
 
 
 def seed_config(seed):
@@ -28,31 +36,44 @@ use_cuda = torch.cuda.is_available()
 device = torch.device("cuda" if use_cuda else "cpu")
 seed_config(HyperParameter.SEED)
 
-model=torchvision.models.resnet50(pretrained=True)
-model.fc=nn.Linear(model.fc.in_features,HyperParameter.NUM_CLASS)
-model.to(device)
+model = SwinTransformer(HyperParameter.NUM_CLASS).cuda()
 
-transform=transforms.Compose([
-    transforms.Resize(HyperParameter.RESIZE),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225])
+
+transform_train=A.Compose([
+    A.CenterCrop(320,256),
+    A.Resize(224,224,interpolation=cv2.INTER_CUBIC),
+    A.Normalize(),
+    A.HorizontalFlip(),
+    ToTensorV2(),
+])
+
+transform_val=A.Compose([
+    A.CenterCrop(320,256),
+    A.Resize(224,224,interpolation=cv2.INTER_CUBIC),
+    A.Normalize(),
+    ToTensorV2(),
 ])
 
 
-train_idx,val_idx=SplitByHumanDataset.split_train_val()
-train_dataset=SplitByHumanDataset(train_idx, transform)
-val_dataset=SplitByHumanDataset(val_idx, transform)
 
-criterion=F1Loss(classes=HyperParameter.NUM_CLASS)
-optimizer=torch.optim.Adam(params=model.parameters(),lr=HyperParameter.LEARNING_RATE)
+train_idx,val_idx=SplitByHumanDataset.split_train_val()
+train_dataset=SplitByHumanDataset(train_idx, transform_train,train=True)
+val_dataset=SplitByHumanDataset(val_idx, transform_val,train=False)
+
+criterion=FocalLoss()
+optimizer=torch.optim.Adam(params=model.parameters(),lr=HyperParameter.LEARNING_RATE,weight_decay=1e-8)
+scheduler=StepLR(optimizer, 5, gamma=0.5)
+
+class Sampler(ImbalancedDatasetSampler):
+    def _get_labels(self, dataset):
+        return dataset.classes
 
 train_loader = DataLoader(
     train_dataset,
     batch_size=HyperParameter.BATCH_SIZE,
     num_workers=multiprocessing.cpu_count() // 2,
-    shuffle=True,
     pin_memory=use_cuda,
+    sampler=Sampler(train_dataset),
     drop_last=True,
 )
 
@@ -80,6 +101,7 @@ for epoch in range(HyperParameter.EPOCH):
         inputs, labels = train_batch
         inputs = inputs.to(device)
         labels = SplitByHumanDataset.multi_to_single(*labels).to(device)
+        # labels = labels[2].to(device)
 
         optimizer.zero_grad()
 
@@ -121,7 +143,7 @@ for epoch in range(HyperParameter.EPOCH):
             inputs, labels = val_batch
             inputs = inputs.to(device)
             labels = SplitByHumanDataset.multi_to_single(*labels).to(device)
-
+            # labels = labels[2].to(device)
             outs = model(inputs)
             preds = torch.argmax(outs, dim=-1)
             label_list+=labels.detach().cpu()

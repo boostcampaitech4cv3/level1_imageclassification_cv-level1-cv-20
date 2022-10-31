@@ -1,15 +1,17 @@
 class HyperParameter():
     EPOCH = 100
     BATCH_SIZE = 32
-    RESIZE = (128,96)
-    LOG_INTERVAL =20
+    RESIZE = (224,224)
+    LOG_INTERVAL =100
     TRAIN_IMAGE_DIR = '/opt/ml/input/data/train/images'
     TRAIN_CSV_DIR = '/opt/ml/input/data/train/train.csv'
+    TRAIN_FACE_IMAGE_DIR = '/opt/ml/face_input/train/images'
+    TRAIN_FACE_CSV_DIR = '/opt/ml/face_input/train/train.csv'
     TEST_IMAGE_DIR = '/opt/ml/input/data/eval/images'
     TEST_CSV_DIR = '/opt/ml/input/data/eval/info.csv'
-    SAVE_DIR = '/opt/ml/model/run'
+    SAVE_DIR = '/opt/ml/model/age_swin_adjusted_range2_noaug_sampler'
     SEED = 42
-    LEARNING_RATE = 0.001
+    LEARNING_RATE = 1e-4
     VALIDATION_RATIO = 0.2
     NUM_CLASS=18
     NUM_MASK_CLASS=3
