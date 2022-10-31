@@ -7,3 +7,6 @@
 
 # 📌 주의사항
 * grabcut의 경우 전통적인 CV 알고리즘을 사용한 관계로 train 데이터셋에 모두 적용하는데 6시간 이상 소요
+
+# 📌 참고자료
+[Remove baclground using UNET](https://github.com/danielgatis/rembg)
