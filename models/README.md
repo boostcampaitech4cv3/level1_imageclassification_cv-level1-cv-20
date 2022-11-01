@@ -47,6 +47,8 @@
 |  ResNeXt50 + Multihead + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.8559        |    0.92     |   5h    | 전지용 | 10.30 |  Resnextmultihead + epoch(70)  |
 |  ResNeXt50 + Multihead + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + face data |        0.83        |    0.92     |   5h    | 전지용 | 10.30 |  Resnextmultihead + epoch(70)  |
 |  ResNeXt50 + Multihead + agelayer + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.8555        |    0.921     |   5h    | 전지용 | 10.30 |  Resnextmultiagehead + epoch(70)  |
+|  ResNeXt50 + Multihead + agelayer + Nestrov SGD + Focal + aug(Cr, Flip, GN, B) + StepLR |        0.8295        |    0.897     |   2h    | 전지용 | 10.31 |  Resnextmultiagehead + epoch(50)  |
+|  ResNeXt50 + Multihead + agelayer + RMSprop + Focal + aug(Cr, Flip, GN, B) + StepLR |        0.8101        |    0.896     |   2h    | 전지용 | 10.31 |  Resnextmultiagehead + epoch(50)  |
 |                                                    |                     |              |                     |        |       |                                |
 
 
