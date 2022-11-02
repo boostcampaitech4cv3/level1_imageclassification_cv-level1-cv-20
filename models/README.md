@@ -49,6 +49,10 @@
 |  ResNeXt50 + Multihead + agelayer + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.8555        |    0.921     |   5h    | 전지용 | 10.30 |  Resnextmultiagehead + epoch(70)  |
 |  ResNeXt50 + Multihead + agelayer + Nestrov SGD + Focal + aug(Cr, Flip, GN, B) + StepLR |        0.8295        |    0.897     |   2h    | 전지용 | 10.31 |  Resnextmultiagehead + epoch(50)  |
 |  ResNeXt50 + Multihead + agelayer + RMSprop + Focal + aug(Cr, Flip, GN, B) + StepLR |        0.8101        |    0.896     |   2h    | 전지용 | 10.31 |  Resnextmultiagehead + epoch(50)  |
+|  ResNeXt50 + Multihead + agelayer + ADAM + Focal + aug(Cr, Flip, GN, B) + StepLR + earlystop + K-Fold |   0.7784 ~ 0.5519      |    0.874 ~ 0.4262   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
+|  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B) + StepLR + sampler + F1 loss + earlystop + K-Fold |   0.7905 ~ 0.5748      |    0.883 ~ 0.676   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
+|  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B) + StepLR + sampler + Focal + earlystop + K-Fold |   0.7472 ~ 0.565      |    0.876 ~ 0.7032   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
+|  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE + earlystop + K-Fold |   0.7938 ~ 0.5817      |    0.886 ~ 0.737   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
 |                                                    |                     |              |                     |        |       |                                |
 
 

@@ -54,7 +54,18 @@
 ## 🔥10/31 제출 상황
 | 제출순서 |         기준          | 작성자 |   모델   |                      전처리                       | 후처리 | 하이퍼 파라미터 | f1_score | Accuracy |
 | :------: | :-------------------: | :----: | :------: | :-----------------------------------------------: | :----: | :-------------: | 
-|    1     |  Baseline custom v4   | 전지용 | ResneXt50 + multihead  |     Centercrop+Filp(H)+Br+GN       |   -    |    epoch 50 + Nestrov SGD     |  0.6705  | 73.8413  |
+|    1     |  Baseline custom v4   | 전지용 | ResneXt50 + multihead + ageLayer |     Centercrop+Filp(H)+Br+GN       |   -    |    epoch 50 + Nestrov SGD     |  0.6705  | 73.8413  |
+
+## 🔥11/01 제출 상황
+| 제출순서 |         기준          | 작성자 |   모델   |                      전처리                       | 후처리 | 하이퍼 파라미터 | f1_score | Accuracy |
+| :------: | :-------------------: | :----: | :------: | :-----------------------------------------------: | :----: | :-------------: | 
+|    1     |  Baseline custom v5   | 전지용 | ResneXt50 + multihead + ageLayer |     Centercrop+Filp(H)+Br+GN       |   -    |    epoch 50 + OOF + Focal    |  0.6562  | 73.5238  |
+|    2     |  Baseline custom v5   | 전지용 | ResneXt50 + multihead + ageLayer |     Centercrop+Filp(H)+Br+GN       |   -    |    epoch 50 + OOF + ImbalanceSampler + F1loss     |  0.6324  | 71.5714  |
+
+## 🔥11/02 제출 상황
+| 제출순서 |         기준          | 작성자 |   모델   |                      전처리                       | 후처리 | 하이퍼 파라미터 | f1_score | Accuracy |
+| :------: | :-------------------: | :----: | :------: | :-----------------------------------------------: | :----: | :-------------: | 
+|    1     |  Baseline custom v6   | 전지용 | ResneXt50 + multihead + ageLayer |     Centercrop+Filp(H)+Br+GN+Hue+Scale       |   -    |    epoch 50 + OOF + LADE    |  0.6614  | 74.8254  |
 
 ## 📌 주의 사항
 * 제출은 팀당 10회 제한이니 팀원에게 알리고 제출하기✨
