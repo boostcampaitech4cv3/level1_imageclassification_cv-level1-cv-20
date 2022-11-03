@@ -1,44 +1,40 @@
-import io
 import multiprocessing
-import random
-import sys
 
 import albumentations as A
 import cv2
 import loss_functions
 import matplotlib.pyplot as plt
 import models
-import numpy as np
-import pandas as pd
 import pytorch_lightning as pl
 import seaborn as sns
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
 import torchmetrics
-import torchvision
 from albumentations.pytorch import ToTensorV2
 from datasets import *
 from hyperparameters import HyperParameter
-from PIL import Image
 from pytorch_lightning.callbacks import ModelCheckpoint
-from torch.utils.data import DataLoader, Dataset
-
+from torch.utils.data import DataLoader
+from torchsampler import ImbalancedDatasetSampler
 
 class MaskModel(pl.LightningModule):
     def preprocessing(self):
+        class Sampler(ImbalancedDatasetSampler):
+            def _get_labels(self, dataset):
+                return dataset.classes
         transform_train=A.Compose([
-            A.CenterCrop(320,256),
+            A.RandomCrop(320,256),
             A.Resize(224,224,interpolation=cv2.INTER_CUBIC),
-            A.Normalize(),
             A.HorizontalFlip(),
+            A.CLAHE(),
+            A.Normalize(),  
             ToTensorV2(),
         ])
 
         transform_val=A.Compose([
             A.CenterCrop(320,256),
             A.Resize(224,224,interpolation=cv2.INTER_CUBIC),
-            A.Normalize(mean=(0.548, 0.504, 0.479),std=(0.237, 0.247, 0.246)),
+            A.CLAHE(),
+            A.Normalize(),
             ToTensorV2(),
         ])
 
@@ -52,7 +48,7 @@ class MaskModel(pl.LightningModule):
             batch_size=HyperParameter.BATCH_SIZE,
             num_workers=multiprocessing.cpu_count() // 2,
             pin_memory=True,
-            shuffle=True,
+            sampler=Sampler(train_dataset),
             drop_last=True
         )
 
@@ -62,7 +58,7 @@ class MaskModel(pl.LightningModule):
             num_workers=multiprocessing.cpu_count() // 2,
             shuffle=False,
             pin_memory=True,
-            drop_last=True,
+            drop_last=False,
         )
 
     def log_confusion_matrix(self,metric):
@@ -130,15 +126,15 @@ class MaskModel(pl.LightningModule):
         self.val_conf_matrix.reset()
 
     def configure_optimizers(self):
-        optimizer = torch.optim.Adam(self.parameters(), lr=self.lr)
+        optimizer =torch.optim.Adam(self.parameters(), lr=self.lr)
         return optimizer
 
 pl.seed_everything(HyperParameter.SEED,workers=True)
 model=MaskModel(
-    model_name="EfficientNetB0",
+    model_name="ResnextModel",
     num_class=18,
     learning_rate=HyperParameter.LEARNING_RATE,
-    loss_funtion_name="FocalLoss"
+    loss_funtion_name="CrossEntropyLoss"
 )
 
 
@@ -150,13 +146,11 @@ checkpoint1=ModelCheckpoint(
     mode="max",
     save_on_train_epoch_end=False,
     auto_insert_metric_name=False
-     
 )
 
 checkpoint2=ModelCheckpoint(
     filename='last',
     save_on_train_epoch_end=True
-     
 )
 
 trainer=pl.Trainer(
@@ -166,9 +160,8 @@ trainer=pl.Trainer(
     log_every_n_steps=HyperParameter.LOG_INTERVAL,
     deterministic=True,
     max_epochs=HyperParameter.EPOCH,
-    num_sanity_val_steps=0
-
-    
+    num_sanity_val_steps=0,
+    amp_backend="native"
 )
 trainer.fit(model,model.train_loader,model.val_loader)
 
