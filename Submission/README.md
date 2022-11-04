@@ -70,14 +70,15 @@
 | :------: | :----------------: | :----: | :------------------------------: | :------------------------------------------------------------------------------: | :----: | :------------------------------------------------------: | -------- | -------- |
 |    1     | Baseline custom v6 | 전지용 | ResneXt50 + multihead + ageLayer |                        Centercrop+Filp(H)+Br+GN+Hue+Scale                        |   -    |                  epoch 50 + OOF + LADE                   | 0.6614   | 74.8254  |
 |    2     |         v3         | 이영섭 |           ResneXt101_2           | Centercrop+Filp(H)+GN+RandomAug+no_background_data(if age > 55 += original_Data) |   -    | epoch 50 + focal + ReduceLROnPlateau + ImbalancedSampler | 0.6245   | 73.2698  |
+|    3     | Baseline custom v4-1 | 전지용 | ResneXt50 + multihead + ageLayer |                        Randomcrop+Filp(H)+Br+GN+Hue                        |   -    |                  epoch 50 + LADE + Sampler                   | 0.6532   | 75.7143  |
 |          |                    |        |                                  |                                                                                  |        |                                                          |          |          |
 
-## 🔥11/02 제출 상황
-| 제출순서 |        기준        | 작성자 |               모델               |                                      전처리                                      | 후처리 |                     하이퍼 파라미터                      | f1_score | Accuracy |
-| :------: | :----------------: | :----: | :------------------------------: | :------------------------------------------------------------------------------: | :----: | :------------------------------------------------------: | -------- | -------- |
-|    1     | Baseline custom v6 | 전지용 | ResneXt50 + multihead + ageLayer |                        Centercrop+Filp(H)+Br+GN+Hue+Scale                        |   -    |                  epoch 50 + OOF + LADE                   | 0.6614   | 74.8254  |
-|    2     |         v3         | 이영섭 |           ResneXt101_2           | Centercrop+Filp(H)+GN+RandomAug+no_background_data(if age > 55 += original_Data) |   -    | epoch 50 + focal + ReduceLROnPlateau + ImbalancedSampler | 0.6245   | 73.2698  |
-|          |                    |        |                                  |                                                                                  |        |                                                          |          |          |
+## 🔥11/03 제출 상황
+| 제출순서 |     기준     | 작성자 |                         모델                          |            전처리            | 후처리 |     하이퍼 파라미터     | f1_score | Accuracy |
+| :------: | :----------: | :----: | :---------------------------------------------------: | :--------------------------: | :----: | :---------------------: | -------- | -------- |
+|    1     | new Baseline | 전지용 |    Swin + multiheadmodel(mask + gender) + ageModel    | Randomcrop+Filp(H)+Br+GN+Hue |   -    |     epoch 50 + LADE     | 0.6320   | 73.6825  |
+|    2     | new Baseline | 전지용 | ResneXt101 + multiheadmodel(mask + gender) + ageModel | Randomcrop+Filp(H)+Br+GN+Hue |   -    | epoch 50 + Sampler + F1 | 0.6320   | 73.6825  |
+|          |              |        |                                                       |                              |        |                         |          |          |
 
 ## 📌 주의 사항
 * 제출은 팀당 10회 제한이니 팀원에게 알리고 제출하기✨
