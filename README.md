@@ -24,17 +24,18 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 | Baseline      | 리더보드 용 Baseline + 새로운 모델 작성 시 필요한 base code     | [링크](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/tree/main/baseline)|
 | Models        | 개인별 시도한 코드 기록                                        | [링크](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/tree/main/models)|
 
-## 📌 모델별 성능
-|   기준   | 작성자 | 모델 | 전처리 | 후처리 | 하이퍼 파라미터 | 성능 |
-| :------: | :----: | :--: | :----: | :----: | :-------------: | :--- |
-| Baseline |   -    |      |        |        |                 |      |
-|  Custom  |   -    |      |        |        |                 |      |
+## 📌 최종 제출 모델
+|   제출자  |   모델   |          전처리            |              하이퍼 파라미터              | 성능(Public) | 성눙(Private) |
+| :------: | :------: | :------------------------:| :--------------------------------------: | :---------: | :-----------: |
+|  윤상준   | Resnet50 |  RandomFlip + ColorJitter |LR: 1e-4, Resize:(196,256), Batch: 64   |  F1: 0.7199  | F1: 0.7137    |
+|  전지용   | ResnetX  |                           |                                         |              |               |
 
 ## 📌모델 아이디어
 - 세가지 클래스의 속성에 따라 최종 클래스가 결정되므로 각각의 클래스를 예측하는 모델 제작해보기
 - class imbalance 문제가 존재하기 때문에 GAN 모델 등을 활용하여 imbalance 문제 해결
 - 모델 학습 과정에서 resizing이 필요한 경우 Face Detection을 통해 해당 부분을 crop 후 resizing 진행하여 중요 feature의 손실을 최소화
 - 얼굴 요소를 탐지하여 얼굴 요소에 따른 마스크 착용 여부 검사하기
+- Sampler를 활용하여 데이터 imblance 해결
 
 ## 📌 개인별 대회 활동내역
 | 이영섭 | 윤상준 | 서원준 | 전지용 | 신재영 |
