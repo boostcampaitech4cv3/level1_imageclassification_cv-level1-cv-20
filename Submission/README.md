@@ -63,7 +63,8 @@
 |    1     | Baseline custom v5 | 전지용 | ResneXt50 + multihead + ageLayer |    Centercrop+Filp(H)+Br+GN     |   -    |           epoch 50 + OOF + Focal           | 0.6562   | 73.5238  |
 |    2     | Baseline custom v5 | 전지용 | ResneXt50 + multihead + ageLayer |    Centercrop+Filp(H)+Br+GN     |   -    | epoch 50 + OOF + ImbalanceSampler + F1loss | 0.6324   | 71.5714  |
 |    3     |         v2         | 이영섭 |           ResneXt101_2           | Centercrop+Filp(H)+GN+RandomAug |   -    |    epoch 50 + focal + ReduceLROnPlateau    | 0.6492   | 74.5556  |
-|          |                    |        |                                  |                                 |        |                                            |          |          |
+|    4     | K-Fold + TTA       | 윤상준 |           ResneXt50              | CenterCrop+Flip(H)+GN+MakeBase Dataset |   -    |   epoch 50 + OOF + TTA + Focal              |  0.5108  | 61.8730  |
+|    5     | K-Fold + TTA       | 윤상준 |           ResneXt50              | CenterCrop+Flip(H)+GN +SplitbyProfile |   -    |   epoch 50 + OOF + TTA + Focal                |  0.5134  | 64.3016  |
 
 ## 🔥11/02 제출 상황
 | 제출순서 |        기준        | 작성자 |               모델               |                                      전처리                                      | 후처리 |                     하이퍼 파라미터                      | f1_score | Accuracy |
@@ -78,7 +79,11 @@
 | :------: | :----------: | :----: | :---------------------------------------------------: | :--------------------------: | :----: | :---------------------: | -------- | -------- |
 |    1     | new Baseline | 전지용 |    Swin + multiheadmodel(mask + gender) + ageModel    | Randomcrop+Filp(H)+Br+GN+Hue |   -    |     epoch 50 + LADE     | 0.6320   | 73.6825  |
 |    2     | new Baseline | 전지용 | ResneXt101 + multiheadmodel(mask + gender) + ageModel | Randomcrop+Filp(H)+Br+GN+Hue |   -    | epoch 50 + Sampler + F1 | 0.6320   | 73.6825  |
-|          |              |        |                                                       |                              |        |                         |          |          |
+|    3     | Seperate Prediction | 윤상준  |                    Resnet50                   | RandomFlip + Colorjitter       |   -    |  epoch 10 + Sampler + F1        | 0.7199   | 78.0635  |
+|    4     | Seperate Prediction | 윤상준  |                    Resnet50                   | Albumentations(CLAHE)          |   -    | epoch 10 + Sampler + F1        | 0.7028  |  76.3492 |
+|    5     | Seperate Prediction | 윤상준  |                    Resnet50                   | Rembg + Albumentations         |   -    |  epoch 10 + Sampler + F1        | 0.6382   | 72.1429  |
+|    6     | Seperate Prediction | 윤상준  |                    Resnet18                   | Albumentations + CoarseDropOut |   -    |  epoch 10 + Sampler + F1        | 0.6286   | 69.3175  |
+|    7     | Seperate Prediction | 윤상준  |                    Resnet50                   |  Rembg + Albumentations + CoarseDropOut |   -    | epoch 10 + Sampler + F1  | 0.6728   | 73.6508  |
 
 ## 📌 주의 사항
 * 제출은 팀당 10회 제한이니 팀원에게 알리고 제출하기✨
