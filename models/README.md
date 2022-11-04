@@ -53,6 +53,10 @@
 |  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B) + StepLR + sampler + F1 loss + earlystop + K-Fold |   0.7905 ~ 0.5748      |    0.883 ~ 0.676   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
 |  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B) + StepLR + sampler + Focal + earlystop + K-Fold |   0.7472 ~ 0.565      |    0.876 ~ 0.7032   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
 |  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE + earlystop + K-Fold |   0.7938 ~ 0.5817      |    0.886 ~ 0.737   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
+|  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE |   0.8478   |    0.9198   |   1h 30m    | 전지용 | 11.02 |  multihead_age  |
+|  Swintranformer + mask&gender model + age model + ADAMP + aug(RCrop, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE |   0.7749   |    0.885   |   4h    | 전지용 | 11.03 |  newbaseline + separate model  |
+|  ResNext101 + mask&gender model + age model + ADAMP + aug(RCrop, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE |   0.795   |    0.901   |   3h    | 전지용 | 11.03 |  newbaseline + separate model  |
+|  ResNext101 + age model (age only) + ADAMW + aug(RCrop, Flip, CLAHE, B) + CosLR + Sampler + F1 |   0.7946   |    0.883   |   2h    | 전지용 | 11.03 |  newbaseline + separate model  |
 |                                                    |                     |              |                     |        |       |                                |
 
 
