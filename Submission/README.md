@@ -63,7 +63,8 @@
 |    1     | Baseline custom v5 | 전지용 | ResneXt50 + multihead + ageLayer |    Centercrop+Filp(H)+Br+GN     |   -    |           epoch 50 + OOF + Focal           | 0.6562   | 73.5238  |
 |    2     | Baseline custom v5 | 전지용 | ResneXt50 + multihead + ageLayer |    Centercrop+Filp(H)+Br+GN     |   -    | epoch 50 + OOF + ImbalanceSampler + F1loss | 0.6324   | 71.5714  |
 |    3     |         v2         | 이영섭 |           ResneXt101_2           | Centercrop+Filp(H)+GN+RandomAug |   -    |    epoch 50 + focal + ReduceLROnPlateau    | 0.6492   | 74.5556  |
-|          |                    |        |                                  |                                 |        |                                            |          |          |
+|    4     | K-Fold + TTA       | 윤상준 |           ResneXt50              | CenterCrop+Flip(H)+GN+MakeBase Dataset |   -    |   epoch 50 + OOF + TTA + Focal              |  0.5108  | 61.8730  |
+|    5     | K-Fold + TTA       | 윤상준 |           ResneXt50              | CenterCrop+Flip(H)+GN +SplitbyProfile |   -    |   epoch 50 + OOF + TTA + Focal                |  0.5134  | 64.3016  |
 
 ## 🔥11/02 제출 상황
 | 제출순서 |        기준        | 작성자 |               모델               |                                      전처리                                      | 후처리 |                     하이퍼 파라미터                      | f1_score | Accuracy |
