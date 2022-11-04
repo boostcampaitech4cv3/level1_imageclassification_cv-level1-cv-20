@@ -78,7 +78,11 @@
 | :------: | :----------: | :----: | :---------------------------------------------------: | :--------------------------: | :----: | :---------------------: | -------- | -------- |
 |    1     | new Baseline | 전지용 |    Swin + multiheadmodel(mask + gender) + ageModel    | Randomcrop+Filp(H)+Br+GN+Hue |   -    |     epoch 50 + LADE     | 0.6320   | 73.6825  |
 |    2     | new Baseline | 전지용 | ResneXt101 + multiheadmodel(mask + gender) + ageModel | Randomcrop+Filp(H)+Br+GN+Hue |   -    | epoch 50 + Sampler + F1 | 0.6320   | 73.6825  |
-|          |              |        |                                                       |                              |        |                         |          |          |
+|    3     | Seperate Prediction | 윤상준  |                    Resnet50                   | RandomFlip + Colorjitter       |   -    |  epoch 10 + Sampler + F1        | 0.7199   | 78.0635  |
+|    4     | Seperate Prediction | 윤상준  |                    Resnet50                   | Albumentations(CLAHE)          |   -    | epoch 10 + Sampler + F1        | 0.7028  |  76.3492 |
+|    5     | Seperate Prediction | 윤상준  |                    Resnet50                   | Rembg + Albumentations         |   -    |  epoch 10 + Sampler + F1        | 0.6382   | 72.1429  |
+|    6     | Seperate Prediction | 윤상준  |                    Resnet18                   | Albumentations + CoarseDropOut |   -    |  epoch 10 + Sampler + F1        | 0.6286   | 69.3175  |
+|    7     | Seperate Prediction | 윤상준  |                    Resnet50                   |  Rembg + Albumentations + CoarseDropOut |   -    | epoch 10 + Sampler + F1  | 0.6728   | 73.6508  |
 
 ## 📌 주의 사항
 * 제출은 팀당 10회 제한이니 팀원에게 알리고 제출하기✨
