@@ -25,10 +25,13 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 | Models        | 개인별 시도한 코드 기록                                        | [링크](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/tree/main/models)|
 
 ## 📌 최종 제출 모델
-|   제출자  |   모델   |          전처리            |              하이퍼 파라미터              | 성능(Public) | 성눙(Private) |
-| :------: | :------: | :------------------------:| :--------------------------------------: | :---------: | :-----------: |
-|  윤상준   | Resnet50 |  RandomFlip + ColorJitter |LR: 1e-4, Resize:(196,256), Batch: 64   |  F1: 0.7199  | F1: 0.7137    |
-|  전지용   | ResnetX  |                           |                                         |              |               |
+| 제출자 |   모델   |           전처리           |            하이퍼 파라미터            | 성능(Public) | 성눙(Private) |
+| :----: | :------: | :------------------------: | :-----------------------------------: | :----------: | :-----------: |
+| 윤상준 | Resnet50 |  RandomFlip + ColorJitter  | LR: 1e-4, Resize:(196,256), Batch: 64 |  F1: 0.7199  |  F1: 0.7137   |
+| 전지용 | ResnetX  |                            |                                       |              |               |
+| 이영섭 | ResnetX  | RandomFlip + Noise + CLAHE | LR: 1e-4, Resize:(270,204), Batch: 64 |  F1:0.6492   |  F1: 0.6237   |
+|        |          |                            |                                       |              |               |
+|        |          |                            |                                       |              |               |
 
 ## 📌모델 아이디어
 - 세가지 클래스의 속성에 따라 최종 클래스가 결정되므로 각각의 클래스를 예측하는 모델 제작해보기
@@ -40,7 +43,7 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 ## 📌 개인별 대회 활동내역
 | 이영섭 | 윤상준 | 서원준 | 전지용 | 신재영 |
 | :----: | :----: | :----: | :----: | :-----:|
-|        | [개인 회고](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/blob/main/Retrospect/%EC%9C%A4%EC%83%81%EC%A4%80.md)|        |        |        |
+| [개인 회고](https://0seob.notion.site/Mask-Classification-54f09b397fc741c9a5037158d8aa0eb1)       | [개인 회고](https://github.com/boostcampaitech4cv3/level1_imageclassification_cv-level1-cv-20/blob/main/Retrospect/%EC%9C%A4%EC%83%81%EC%A4%80.md)|        |        |        |
 
 ## 📌 주의 사항
 * 매일 활동한 내역 정리해서 github에 올리기 ✨
