@@ -26,38 +26,38 @@
 
 ### 사람별로 나눈 결과(더 test_set에 가까울 것으로 예상됨)
 
-|                       모델명                       |    최고 F1 Score    | 최고 Val Acc | 걸린 시간(F1 Score) |  사람  | 날짜  |            run name            |
-| :------------------------------------------------: | :-----------------: | :----------: | :-----------------: | :----: | :---: | :----------------------------: |
-|              ResNet50 + ADAM + F1Loss              |        0.645        |    0.788     |         52m         | 신재영 | 10.27 |              run               |
-|              ResNet18 + ADAM + F1Loss              |        0.695        |    0.832     |         17m         | 신재영 | 10.27 |    run_resnet18_adam_f1loss    |
-|           ResNet18 + ADAM + CrossEntropy           | 0.740 (overfitting) |    0.849     |         3m          | 신재영 | 10.27 | run_resnet18_adam_crossentropy |
-|              ResNet50 + ADAM + Focal               |        0.728        |    0.863     |        1h 6m        | 신재영 | 10.27 |    run_resnet50_adam_focal     |
-|              ResNet18 + ADAM + Focal               |        0.735        |     0.86     |         11m         | 신재영 | 10.27 |    run_resnet18_adam_focal     |
-|               ResNext + ADAM + Focal               |        0.788        |    0.884     |         54m         | 신재영 | 10.28 |       resnext_adam_focal       |
-|           Deit3Base16_224 + ADAM + Focal           |        0.635        |    0.753     |        1h 17        | 신재영 | 10.28 |      dei3base_adam_focal       |
-|       ResNet18 + ADAM + Focal+ Augmentations       |        0.803        |    0.914     |         45m         | 신재영 | 10.28 |       resnet18_more_aug        |
-| ResNet18 + ADAM + Focal+ Augmentations_with_resize |        0.74         |    0.867     |         12m         | 신재영 | 10.28 |   resnet18_more_aug_resized    |
-| ResNet18 + Adam + Focal + Augmentation + face data |        0.792        |     0.91     |       1h 11m        | 신재영 | 10.28 |           tqdm_test            |
-|  ResNeXt50 + ADAM + Focal + aug(Cr, Flip, GN, B)   |          -          |   0.92       |  1h 30m   | 전지용 | 10.28 |  Resnext50  |
-|  ResNeXt50 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + Face data |          -          |    0.90     |  1h 30m   | 전지용 | 10.28 |  Resnext50  |
-|  ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B)  |        0.856        |    0.92     |  2h 30m   | 전지용 | 10.29 |  Resnext101  |
-|  ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + face data |        0.834        |    0.912     |  2h 30m   | 전지용 | 10.29 |  Resnext101  |
-|  ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + face data |        0.838        |    0.92     |  2h 30m   | 전지용 | 10.29 |  Resnext101  |
-|  ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.841        |    0.915     |  5h    | 전지용 | 10.29 |  Resnext101 + batchsize(16)  |
-|  ResNeXt50 + Multihead + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.8559        |    0.92     |   5h    | 전지용 | 10.30 |  Resnextmultihead + epoch(70)  |
-|  ResNeXt50 + Multihead + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + face data |        0.83        |    0.92     |   5h    | 전지용 | 10.30 |  Resnextmultihead + epoch(70)  |
-|  ResNeXt50 + Multihead + agelayer + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR |        0.8555        |    0.921     |   5h    | 전지용 | 10.30 |  Resnextmultiagehead + epoch(70)  |
-|  ResNeXt50 + Multihead + agelayer + Nestrov SGD + Focal + aug(Cr, Flip, GN, B) + StepLR |        0.8295        |    0.897     |   2h    | 전지용 | 10.31 |  Resnextmultiagehead + epoch(50)  |
-|  ResNeXt50 + Multihead + agelayer + RMSprop + Focal + aug(Cr, Flip, GN, B) + StepLR |        0.8101        |    0.896     |   2h    | 전지용 | 10.31 |  Resnextmultiagehead + epoch(50)  |
-|  ResNeXt50 + Multihead + agelayer + ADAM + Focal + aug(Cr, Flip, GN, B) + StepLR + earlystop + K-Fold |   0.7784 ~ 0.5519      |    0.874 ~ 0.4262   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
-|  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B) + StepLR + sampler + F1 loss + earlystop + K-Fold |   0.7905 ~ 0.5748      |    0.883 ~ 0.676   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
-|  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B) + StepLR + sampler + Focal + earlystop + K-Fold |   0.7472 ~ 0.565      |    0.876 ~ 0.7032   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
-|  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE + earlystop + K-Fold |   0.7938 ~ 0.5817      |    0.886 ~ 0.737   |   3h    | 전지용 | 11.01 |  kfoldEnsemble  |
-|  ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE |   0.8478   |    0.9198   |   1h 30m    | 전지용 | 11.02 |  multihead_age  |
-|  Swintranformer + mask&gender model + age model + ADAMP + aug(RCrop, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE |   0.7749   |    0.885   |   4h    | 전지용 | 11.03 |  newbaseline + separate model  |
-|  ResNext101 + mask&gender model + age model + ADAMP + aug(RCrop, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE |   0.795   |    0.901   |   3h    | 전지용 | 11.03 |  newbaseline + separate model  |
-|  ResNext101 + age model (age only) + ADAMW + aug(RCrop, Flip, CLAHE, B) + CosLR + Sampler + F1 |   0.7946   |    0.883   |   2h    | 전지용 | 11.03 |  newbaseline + separate model  |
-|                                                    |                     |              |                     |        |       |                                |
+|                                                            모델명                                                            |    최고 F1 Score    |  최고 Val Acc  | 걸린 시간(F1 Score) |  사람  | 날짜  |            run name             |
+| :--------------------------------------------------------------------------------------------------------------------------: | :-----------------: | :------------: | :-----------------: | :----: | :---: | :-----------------------------: |
+|                                                   ResNet50 + ADAM + F1Loss                                                   |        0.645        |     0.788      |         52m         | 신재영 | 10.27 |               run               |
+|                                                   ResNet18 + ADAM + F1Loss                                                   |        0.695        |     0.832      |         17m         | 신재영 | 10.27 |    run_resnet18_adam_f1loss     |
+|                                                ResNet18 + ADAM + CrossEntropy                                                | 0.740 (overfitting) |     0.849      |         3m          | 신재영 | 10.27 | run_resnet18_adam_crossentropy  |
+|                                                   ResNet50 + ADAM + Focal                                                    |        0.728        |     0.863      |        1h 6m        | 신재영 | 10.27 |     run_resnet50_adam_focal     |
+|                                                   ResNet18 + ADAM + Focal                                                    |        0.735        |      0.86      |         11m         | 신재영 | 10.27 |     run_resnet18_adam_focal     |
+|                                                    ResNext + ADAM + Focal                                                    |        0.788        |     0.884      |         54m         | 신재영 | 10.28 |       resnext_adam_focal        |
+|                                                Deit3Base16_224 + ADAM + Focal                                                |        0.635        |     0.753      |        1h 17        | 신재영 | 10.28 |       dei3base_adam_focal       |
+|                                            ResNet18 + ADAM + Focal+ Augmentations                                            |        0.803        |     0.914      |         45m         | 신재영 | 10.28 |        resnet18_more_aug        |
+|                                      ResNet18 + ADAM + Focal+ Augmentations_with_resize                                      |        0.74         |     0.867      |         12m         | 신재영 | 10.28 |    resnet18_more_aug_resized    |
+|                                      ResNet18 + Adam + Focal + Augmentation + face data                                      |        0.792        |      0.91      |       1h 11m        | 신재영 | 10.28 |            tqdm_test            |
+|                                       ResNeXt50 + ADAM + Focal + aug(Cr, Flip, GN, B)                                        |          -          |      0.92      |       1h 30m        | 전지용 | 10.28 |            Resnext50            |
+|                             ResNeXt50 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + Face data                              |          -          |      0.90      |       1h 30m        | 전지용 | 10.28 |            Resnext50            |
+|                                       ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B)                                       |        0.856        |      0.92      |       2h 30m        | 전지용 | 10.29 |           Resnext101            |
+|                                 ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + face data                                 |        0.834        |     0.912      |       2h 30m        | 전지용 | 10.29 |           Resnext101            |
+|                             ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + face data                             |        0.838        |      0.92      |       2h 30m        | 전지용 | 10.29 |           Resnext101            |
+|                                   ResNeXt101 + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR                                   |        0.841        |     0.915      |         5h          | 전지용 | 10.29 |   Resnext101 + batchsize(16)    |
+|                             ResNeXt50 + Multihead + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR                              |       0.8559        |      0.92      |         5h          | 전지용 | 10.30 |  Resnextmultihead + epoch(70)   |
+|                       ResNeXt50 + Multihead + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR + face data                        |        0.83         |      0.92      |         5h          | 전지용 | 10.30 |  Resnextmultihead + epoch(70)   |
+|                        ResNeXt50 + Multihead + agelayer + ADAM + Focal + aug(Cr, Flip, GN, B) + CosLR                        |       0.8555        |     0.921      |         5h          | 전지용 | 10.30 | Resnextmultiagehead + epoch(70) |
+|                    ResNeXt50 + Multihead + agelayer + Nestrov SGD + Focal + aug(Cr, Flip, GN, B) + StepLR                    |       0.8295        |     0.897      |         2h          | 전지용 | 10.31 | Resnextmultiagehead + epoch(50) |
+|                      ResNeXt50 + Multihead + agelayer + RMSprop + Focal + aug(Cr, Flip, GN, B) + StepLR                      |       0.8101        |     0.896      |         2h          | 전지용 | 10.31 | Resnextmultiagehead + epoch(50) |
+|             ResNeXt50 + Multihead + agelayer + ADAM + Focal + aug(Cr, Flip, GN, B) + StepLR + earlystop + K-Fold             |   0.7784 ~ 0.5519   | 0.874 ~ 0.4262 |         3h          | 전지용 | 11.01 |          kfoldEnsemble          |
+|       ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B) + StepLR + sampler + F1 loss + earlystop + K-Fold       |   0.7905 ~ 0.5748   | 0.883 ~ 0.676  |         3h          | 전지용 | 11.01 |          kfoldEnsemble          |
+|        ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B) + StepLR + sampler + Focal + earlystop + K-Fold        |   0.7472 ~ 0.565    | 0.876 ~ 0.7032 |         3h          | 전지용 | 11.01 |          kfoldEnsemble          |
+| ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE + earlystop + K-Fold |   0.7938 ~ 0.5817   | 0.886 ~ 0.737  |         3h          | 전지용 | 11.01 |          kfoldEnsemble          |
+|           ResNeXt50 + Multihead + agelayer + ADAM + aug(Cr, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE            |       0.8478        |     0.9198     |       1h 30m        | 전지용 | 11.02 |          multihead_age          |
+|  Swintranformer + mask&gender model + age model + ADAMP + aug(RCrop, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE   |       0.7749        |     0.885      |         4h          | 전지용 | 11.03 |  newbaseline + separate model   |
+|    ResNext101 + mask&gender model + age model + ADAMP + aug(RCrop, Flip, GN, B, Hue, Scale) + ExponentialLR + Focal+LADE     |        0.795        |     0.901      |         3h          | 전지용 | 11.03 |  newbaseline + separate model   |
+|                ResNext101 + age model (age only) + ADAMW + aug(RCrop, Flip, CLAHE, B) + CosLR + Sampler + F1                 |       0.7946        |     0.883      |         2h          | 전지용 | 11.03 |  newbaseline + separate model   |
+|                                                                                                                              |                     |                |                     |        |       |                                 |
 
 
 > 최고 결과 이후에 overfitting이 일어나면 overfitting이라고 써준다
